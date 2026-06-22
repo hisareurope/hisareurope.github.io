@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hisar Europe</title>
+<title>Hisar Europe FAQ</title>
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-36E0S5QW48"></script>
@@ -15,332 +15,540 @@ gtag('config', 'G-36E0S5QW48');
 </script>
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0;}
 body{
-margin:0;
-font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-background:linear-gradient(to bottom,#e6edf7 0%,#f4f7fb 100%);
-color:#1f2937;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background:linear-gradient(to bottom,#e6edf7 0%,#f4f7fb 100%);
+  color:#1c1c1e;
+  line-height:1.55;
 }
 
 /* HEADER */
 .header{
-position:sticky;
-top:0;
-width:100%;
-display:flex;
-align-items:center;
-gap:12px;
-background:#ffffffcc;
-backdrop-filter:blur(6px);
-padding:8px 16px;
-border-bottom:1px solid #ddd;
-z-index:1000;
+  position:sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ffffffcc;
+  backdrop-filter:blur(10px);
+  padding:12px 20px;
+  border-bottom:1px solid #ddd;
+  z-index:1000;
 }
-.header.faq-mode{
-justify-content:center;
+.back-link{
+  position:absolute;
+  left:16px;
+  color:#007aff;
+  text-decoration:none;
+  font-size:28px;
+  font-weight:600;
 }
-.back-arrow{
-display:none;
-font-size:22px;
-cursor:pointer;
+.header-center{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 }
-.header.faq-mode .back-arrow{
-display:block;
-position:absolute;
-left:16px;
+.header-logo{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid #ddd;
 }
-.header-logo{width:40px;height:40px;border-radius:50%;border:1px solid #ddd}
-.header-title{font-weight:600;font-size:18px}
-.language-switcher{margin-left:auto}
-.header.faq-mode .language-switcher{
-position:absolute;
-right:16px;
+.header-title{
+  font-weight:600;
+  font-size:20px;
+}
+.language-switcher{
+  position:absolute;
+  right:16px;
 }
 .language-switcher select{
-padding:6px 10px;border-radius:8px;border:1px solid #ddd;font-weight:600;
+  padding:8px 12px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-weight:600;
+  background:#fff;
+  cursor:pointer;
 }
-
-/* VIEWS */
-.view{display:none}
-.view.active{display:block}
 
 /* LAYOUT */
 .container{
-display:flex;flex-direction:column;align-items:center;
-padding:48px 16px 32px;gap:18px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  padding:40px 16px 48px;
 }
 .card{
-background:#fff;
-padding:28px 22px;
-border-radius:16px;
-box-shadow:0 12px 32px rgba(0,0,0,.08);
-max-width:400px;width:100%;
-text-align:center;
+  background:#fff;
+  padding:28px 24px;
+  border-radius:24px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  max-width:760px;
+  width:100%;
+  margin:0 auto;
 }
-.card h2{margin:0 0 8px;color:#000}
-.card p{margin:0 0 16px;color:#4b5563}
-
-/* BUTTONS */
-a.button{
-display:block;width:100%;
-margin:10px 0;padding:14px;
-border-radius:12px;
-font-size:16px;font-weight:600;
-text-decoration:none;text-align:center;
-color:#fff;cursor:pointer;
+.card-intro{
+  background:linear-gradient(135deg,#ffffff 0%,#eef7ff 100%);
+  text-align:center;
 }
-.b1{background:linear-gradient(to right,#1e3a8a,#2563eb)}
-.b2{background:linear-gradient(to right,#2563eb,#3b82f6)}
-.b3{background:linear-gradient(to right,#3b82f6,#60a5fa)}
-.b4{background:linear-gradient(to right,#60a5fa,#93c5fd)}
-
-/* BANK */
-.bank-content{display:none}
-.copy-button{
-margin-top:12px;padding:12px;width:100%;
-border-radius:10px;border:none;
-background:#2563eb;color:#fff;font-weight:600;cursor:pointer;
+.card-umrah{
+  background:linear-gradient(135deg,#ffffff 0%,#e9fbfb 100%);
 }
-.copy-success{display:none;margin-top:8px;color:#10b981;font-weight:600}
+.card-hajj{
+  background:linear-gradient(135deg,#ffffff 0%,#fff7e6 100%);
+}
+.card h1{
+  font-size:26px;
+  margin-bottom:10px;
+  text-align:center;
+}
+.card h2{
+  font-size:22px;
+  margin-bottom:16px;
+  text-align:center;
+}
+.card p{
+  color:#3c3c43;
+  font-size:16px;
+}
 
 /* FAQ */
 .faq-item{
-text-align:left;
-border-top:1px solid #e5e7eb;
-padding:12px 0;
-cursor:pointer;
+  text-align:left;
+  border-top:1px solid #e5e5ea;
+  padding:16px 0;
+  cursor:pointer;
 }
-.faq-item p{display:none;margin-top:8px;color:#4b5563}
+.faq-item:first-of-type{
+  border-top:none;
+}
+.faq-item strong{
+  display:block;
+  font-size:18px;
+  color:#1c1c1e;
+  padding-right:26px;
+  position:relative;
+}
+.faq-item strong::after{
+  content:"+";
+  position:absolute;
+  right:0;
+  top:0;
+  color:#00a6c8;
+  font-size:22px;
+  line-height:1;
+}
+.faq-item.open strong::after{
+  content:"−";
+}
+.faq-item p{
+  display:none;
+  margin-top:10px;
+  color:#4b5563;
+  font-size:16px;
+}
+.faq-item.open p{
+  display:block;
+}
+.faq-item ul{
+  display:none;
+  margin-top:10px;
+  padding-left:22px;
+  color:#4b5563;
+}
+.faq-item.open ul{
+  display:block;
+}
+.faq-item li{
+  margin:4px 0;
+}
 
-/* SOCIALS */
-.socials{margin-top:24px;display:flex;gap:18px;justify-content:center}
-.social-icon{
-width:60px;height:60px;border-radius:50%;
-background:#fff;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 10px 24px rgba(0,0,0,.15);
+/* BUTTON */
+a.button{
+  display:block;
+  max-width:420px;
+  width:100%;
+  margin:18px auto 0;
+  padding:15px;
+  border-radius:18px;
+  font-size:17px;
+  font-weight:600;
+  text-align:center;
+  color:#fff;
+  background:#007aff;
+  box-shadow:0 6px 15px rgba(0,122,255,0.3);
+  transition:all 0.25s ease;
+  text-decoration:none;
 }
-.social-icon svg{width:30px;height:30px}
+a.button:hover{
+  transform:translateY(-2px);
+  background:#00a6c8;
+  box-shadow:0 10px 25px rgba(0,166,200,0.35);
+}
 
-/* VIDEO MODAL */
-#videoModal{
-display:none;position:fixed;inset:0;
-background:rgba(0,0,0,.6);
-z-index:2000;
-align-items:center;justify-content:center;
-}
-#videoModal .box{
-background:#fff;max-width:800px;width:90%;
-border-radius:16px;padding:16px;position:relative;
-}
-#videoModal button{
-position:absolute;top:10px;right:14px;
-width:36px;height:36px;border-radius:50%;
-border:none;background:#111;color:#fff;
-font-size:22px;cursor:pointer;
+@media(max-width:600px){
+  .header{padding:10px 12px;}
+  .header-title{font-size:17px;}
+  .header-logo{width:42px;height:42px;}
+  .back-link{left:10px;font-size:26px;}
+  .language-switcher{right:10px;}
+  .language-switcher select{padding:7px 8px;font-size:13px;}
+  .card{padding:24px 18px;border-radius:20px;}
+  .card h1{font-size:23px;}
+  .card h2{font-size:20px;}
+  .faq-item strong{font-size:17px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header" id="header">
-<div class="back-arrow" onclick="showHome()">←</div>
-<img src="logo.png" class="header-logo">
-<div class="header-title">Hisar Europe</div>
-<div class="language-switcher">
-<select onchange="setLanguage(this.value)">
-<option value="de">🇩🇪 DE</option>
-<option value="tr">🇹🇷 TR</option>
-<option value="en">🇬🇧 EN</option>
-</select>
-</div>
-</div>
+<header class="header">
+  <a class="back-link" href="index.html" aria-label="Back">←</a>
+  <div class="header-center">
+    <img src="logo.png" class="header-logo" alt="Hisar Europe Logo">
+    <div class="header-title">Hisar Europe</div>
+  </div>
+  <div class="language-switcher">
+    <select onchange="setLanguage(this.value)">
+      <option value="tr">🇹🇷 TR</option>
+      <option value="de">🇩🇪 DE</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="nl">🇳🇱 NL</option>
+      <option value="en">🇬🇧 EN</option>
+    </select>
+  </div>
+</header>
 
-<!-- HOME VIEW -->
-<section id="homeView" class="view active">
-<div class="container">
+<main class="container">
 
-<div class="card">
-<h2 data-i18n="review_title"></h2>
-<p data-i18n="review_text"></p>
-<a class="button b1" href="#" onclick="openGoogleMaps(event)">
-⭐ <span data-i18n="review_button"></span>
-</a>
-</div>
+  <section class="card card-intro">
+    <h1 data-i18n="page_title"></h1>
+    <p data-i18n="page_intro"></p>
+  </section>
 
-<div class="card">
-<h2 data-i18n="umrah_title"></h2>
-<p data-i18n="umrah_text"></p>
-<a class="button b2" href="https://umre.hisareurope.com/" target="_blank">
-<span data-i18n="umrah_button"></span>
-</a>
-</div>
+  <section class="card card-umrah">
+    <h2 data-i18n="umrah_section_title"></h2>
 
-<div class="card">
-<h2 data-i18n="hajj_title"></h2>
-<p data-i18n="hajj_text"></p>
-<a class="button b3" href="https://hisareurope.com/hac/#form" target="_blank">
-<span data-i18n="hajj_button"></span>
-</a>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="umrah_q1"></strong>
+      <p data-i18n="umrah_a1"></p>
+    </div>
 
-<div class="card">
-<h2 data-i18n="bank_title"></h2>
-<a class="button b4" href="#" onclick="toggleBank();return false;">
-<span data-i18n="bank_button"></span>
-</a>
-<div id="bankContent" class="bank-content">
-<img src="bankverbindung.jpeg" style="width:100%;border-radius:12px">
-<button class="copy-button" onclick="copyIBAN()">IBAN kopieren</button>
-<div id="copySuccess" class="copy-success">✓ kopiert</div>
-</div>
-</div>
-
-<div class="card">
-<h2 data-i18n="video_title"></h2>
-<p data-i18n="video_text"></p>
-<a class="button b4" href="#" onclick="openVideo();return false;">
-<span data-i18n="video_button"></span>
-</a>
-</div>
-
-<div class="card">
-<h2>FAQ</h2>
-<p>Häufige Fragen</p>
-<a class="button b4" href="#" onclick="showFAQ();return false;">Zum FAQ</a>
-</div>
-
-<div class="socials">
-<!-- Instagram -->
-<a class="social-icon" href="https://www.instagram.com/hisar_europe/" target="_blank">
-<svg viewBox="0 0 24 24" fill="none" stroke="url(#ig)">
-<defs>
-<linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-<stop offset="0%" stop-color="#f58529"/>
-<stop offset="50%" stop-color="#dd2a7b"/>
-<stop offset="100%" stop-color="#8134af"/>
-</linearGradient>
-</defs>
-<rect x="3" y="3" width="18" height="18" rx="5"/>
-<circle cx="12" cy="12" r="4"/>
-</svg>
-</a>
-
-<!-- YouTube -->
-<a class="social-icon" href="https://www.youtube.com/@HisarEurope" target="_blank">
-<svg viewBox="0 0 24 24">
-<rect x="2" y="5" width="20" height="14" rx="4" fill="#FF0000"/>
-<polygon points="10,9 16,12 10,15" fill="#fff"/>
-</svg>
-</a>
-
-<!-- WhatsApp -->
-<a class="social-icon" href="https://whatsapp.com/channel/0029VaSzmboJpe8jgaPg622N" target="_blank">
-<svg viewBox="0 0 32 32">
-<path fill="#25D366" d="M16 3C9.4 3 4 8.1 4 14.5c0 2.3.7 4.6 2 6.5L4 29l8.3-2.2c1.1.3 2.3.5 3.7.5 6.6 0 12-5.1 12-11.5S22.6 3 16 3z"/>
-<path fill="#fff" d="M21.4 18.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.6-.2-.9.2-.3.4-1 1-1.2 1.2-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 4 1.6 4.3c.2.3 2.8 4.3 6.8 6 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.6-.5z"/>
-</svg>
-</a>
-</div>
-
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="umrah_q2"></strong>
+      <p data-i18n="umrah_a2"></p>
+    </div>
 </section>
 
-<!-- FAQ VIEW -->
-<section id="faqView" class="view">
-<div class="container">
-<div class="card">
-<h2>FAQ</h2>
+  <section class="card card-hajj">
+    <h2 data-i18n="hajj_section_title"></h2>
 
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong>Wie melde ich mich an?</strong>
-<p>Über die entsprechenden Anmeldeformulare auf der Startseite.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q1"></strong>
+      <p data-i18n="hajj_a1"></p>
+    </div>
 
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong>Wann beginnt die Reise?</strong>
-<p>Die genauen Termine werden nach Anmeldung mitgeteilt.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q2"></strong>
+      <p data-i18n="hajj_a2"></p>
+    </div>
 
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong>Wie erreiche ich euch?</strong>
-<p>Über WhatsApp, Instagram oder telefonisch.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q3"></strong>
+      <p data-i18n="hajj_a3"></p>
+    </div>
 
-  <div class="faq-item" onclick="toggleFaq(this)">
-<strong>Kann ich die Umrah mit einem Touristenvisum durchführen??</strong>
-<p>Für Staatsangehörige vieler Länder ist die Umrah auch mit einem Touristenvisum möglich. Die Bedingungen können je nach Land variieren; Sie können Ihre Situation schnell mit Hisar Europe klären.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q4"></strong>
+      <p data-i18n="hajj_a4"></p>
+    </div>
 
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong>Gibt es wirklich eine „Unterkunftsreservierungspflicht”?</strong>
-<p>In letzter Zeit wurden in offiziellen Quellen Berichte veröffentlicht, wonach für ein Umrah-Visum eine Hotelreservierung über offizielle Kanäle vorgeschrieben ist. Da die Regelung von Zeit zu Zeit aktualisiert werden kann, sollten Sie sich vor der Antragstellung am besten kurz bei uns erkundigen.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q5"></strong>
+      <p data-i18n="hajj_a5"></p>
+    </div>
 
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong>Wie erreiche ich euch?</strong>
-<p>Über WhatsApp, Instagram oder telefonisch.</p>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q6"></strong>
+      <p data-i18n="hajj_a6"></p>
+    </div>
 
-</div>
-</div>
-</section>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q7"></strong>
+      <p data-i18n="hajj_a7"></p>
+    </div>
 
-<!-- VIDEO MODAL -->
-<div id="videoModal">
-<div class="box">
-<button onclick="closeVideo()">×</button>
-<iframe id="videoFrame" width="100%" height="420" allowfullscreen></iframe>
-</div>
-</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q8"></strong>
+      <p data-i18n="hajj_a8"></p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q9"></strong>
+      <ul>
+        <li data-i18n="hajj_a9_1"></li>
+        <li data-i18n="hajj_a9_2"></li>
+        <li data-i18n="hajj_a9_3"></li>
+        <li data-i18n="hajj_a9_4"></li>
+        <li data-i18n="hajj_a9_5"></li>
+        <li data-i18n="hajj_a9_6"></li>
+        <li data-i18n="hajj_a9_7"></li>
+        <li data-i18n="hajj_a9_8"></li>
+      </ul>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q10"></strong>
+      <p data-i18n="hajj_a10"></p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong data-i18n="hajj_q11"></strong>
+      <p data-i18n="hajj_a11"></p>
+    </div>
+  </section>
+
+  <section class="card card-intro">
+    <h2 data-i18n="contact_title"></h2>
+    <p data-i18n="contact_text"></p>
+    <a class="button" href="index.html" data-i18n="back_button"></a>
+  </section>
+
+</main>
 
 <script>
-function showFAQ(){
-homeView.classList.remove("active");
-faqView.classList.add("active");
-header.classList.add("faq-mode");
-}
-function showHome(){
-faqView.classList.remove("active");
-homeView.classList.add("active");
-header.classList.remove("faq-mode");
-}
-function toggleFaq(el){
-const p=el.querySelector("p");
-p.style.display=p.style.display==="block"?"none":"block";
-}
-function toggleBank(){
-bankContent.style.display=bankContent.style.display==="block"?"none":"block";
-}
-function copyIBAN(){
-navigator.clipboard.writeText("DE40 5023 4500 0254 5200 01")
-.then(()=>{copySuccess.style.display="block";
-setTimeout(()=>copySuccess.style.display="none",2000);});
-}
-function openVideo(){
-videoFrame.src="https://www.youtube.com/embed/TNSjLdjA9Nc?autoplay=1";
-videoModal.style.display="flex";
-}
-function closeVideo(){
-videoFrame.src="";
-videoModal.style.display="none";
-}
-function openGoogleMaps(e){
-e.preventDefault();
-window.open("https://search.google.com/local/writereview?placeid=ChIJg33E7j4lv0cRyFLRiBlbr1E","_blank");
+const translations = {
+  tr:{
+    page_title:"Sıkça Sorulan Sorular",
+    page_intro:"Umre ve Hac hakkında merak edilen temel soruları bu sayfada bulabilirsiniz.",
+    umrah_section_title:"Umre Hakkında Sıkça Sorulan Sorular",
+    umrah_q1:"Umre kaydı nasıl yapılır?",
+    umrah_a1:"Umre kaydı için ana sayfadaki Umre Turları bölümünden ilgili paket ve rezervasyon sayfasına ulaşabilirsiniz.",
+    umrah_q2:"Umre seyahati ne zaman başlıyor?",
+    umrah_a2:"Seyahat tarihleri seçilen programa göre değişir. Güncel tarih ve kontenjan bilgisi için Hisar Europe ekibiyle iletişime geçebilirsiniz.",    hajj_section_title:"Hac Hakkında Sıkça Sorulan Sorular",
+    hajj_q1:"Hacca kimler gidebilir?",
+    hajj_a1:"Hacca gidip dönünceye kadar bakmakla mükellef olduğu kimselerin geçimini sağlayabilecek imkâna sahip, akıl-bâliğ olup fiziksel ve zihinsel olarak bu ibadeti yerine getirebilecek durumda olan ve maddi olarak hacca gitmeye gücü yeten her Müslüman hac ibadetini yerine getirmekle yükümlüdür.",
+    hajj_q2:"Hac için yaş sınırı var mı?",
+    hajj_a2:"Hac ibadeti için genel bir yaş sınırı olmamakla birlikte Suudi Arabistan resmî otoritesi tarafından belirli yaş gruplarına kısıtlama getirilebilir. Geçmiş yıllarda 65 yaş üstü, 2025 yılında ise 12 yaş altındaki kişilerin hacca katılımı kısıtlanmıştır.",
+    hajj_q3:"Hacca kaç defa gidilebilir?",
+    hajj_a3:"Farz olan hac ibadeti için ömürde bir defa hacca gitmek yeterlidir. Ancak daha sonra nafile olarak hacca gitmek de mümkündür.",
+    hajj_q4:"Hac ne zaman yapılır?",
+    hajj_a4:"Haccın yapılış zamanı, hicrî takvime göre Zilhicce ayının 8, 9 ve 10. günleri olarak belirlenmiştir. Bu günler hac ibadetinin farz olduğu günlerdir.",
+    hajj_q5:"Hac vizesi nasıl alınır?",
+    hajj_a5:"Avrupa’dan hacca gitmek için Suudi Arabistan tarafından yetkilendirilmiş tek otorite olan Nusuk platformu üzerinden vize alınabilir. Bireysel olarak başvuru yapılıp Hisar Europe’un hac paketlerinden birini seçmeniz gerekmektedir. Tüm bu süreçte Hisar Europe sizlere yardımcı olmaktadır.",
+    hajj_q6:"Hac sırasında ihram ne zaman ve nasıl giyilir?",
+    hajj_a6:"Hac ibadeti için ihrama, belirlenen “mikat” adı verilen noktalarda girilir. Bu noktalar, Mekke-i Mükerreme’ye ulaşmadan önce hacı adaylarının ihrama girmek için durakladıkları yerlerdir. Erkekler için ihram, dikişsiz iki parça beyaz örtüdür (izar ve rida). Kadınlar ise normal kıyafetleriyle ihrama girebilirler, ancak yüzlerini açık tutmaları gerekir.",
+    hajj_q7:"Hac ne kadar sürer?",
+    hajj_a7:"Hac süresi, kişilerin konaklama ve program tercihlerine göre değişiklik göstermekle birlikte, en az 7 gün sürmektedir. Bu süre 10, 15, 20 veya daha fazla gün de olabilir.",
+    hajj_q8:"Hac ile Umre arasındaki fark nedir?",
+    hajj_a8:"Hac, farz olan ve belirli bir zamanda, Zilhicce ayında yapılması gereken daha kapsamlı bir ibadettir. Umre ise yılın her döneminde yapılabilecek sünnet bir ibadettir.",
+    hajj_q9:"Hac sırasında yapılması gereken temel ibadetler nelerdir?",
+    hajj_a9_1:"İhrama girmek",
+    hajj_a9_2:"Tavaf yapmak",
+    hajj_a9_3:"Sa’y etmek",
+    hajj_a9_4:"Arafat’ta vakfede bulunmak",
+    hajj_a9_5:"Müzdelife’de vakfede bulunmak",
+    hajj_a9_6:"Şeytan taşlamak",
+    hajj_a9_7:"Kurban kesmek",
+    hajj_a9_8:"Tıraş olmak",
+    hajj_q10:"Hac kurasına katılmak şart mı?",
+    hajj_a10:"Müslüman nüfusun fazla olduğu ve Diyaneti olan Türkiye gibi ülkelerde hac işlemleri kura ile belirlenmektedir. Avrupa ülkelerinde ise tek yetkili platform olan Nusuk üzerinden ülkelere verilen kontenjanlar dahilinde kayıt yapılır.",
+    hajj_q11:"Nusuk Hac nedir?",
+    hajj_a11:"Nusuk, Suudi Arabistan Hac ve Umre Bakanlığı tarafından geliştirilen, hac ve umre ziyaretçilerinin mübarek mekânlara erişimini ve hizmetlerden yararlanmasını kolaylaştıran resmî bir mobil uygulamadır. Seçilen ülkelere özel hac paketleri sunar ve hacı adaylarının tüm süreci tek bir sistem üzerinden yürütmesine olanak tanır.",
+    contact_title:"Ana Sayfaya Dön",
+    contact_text:"Kayıt, ödeme, sosyal medya ve iletişim bağlantıları için ana sayfaya dönebilirsiniz.",
+    back_button:"Ana Sayfaya Dön"
+  },
+  de:{
+    page_title:"Häufig gestellte Fragen",
+    page_intro:"Hier finden Sie wichtige Fragen und Antworten zu Umra und Hadsch.",
+    umrah_section_title:"Häufig gestellte Fragen zur Umra",
+    umrah_q1:"Wie melde ich mich für die Umra an?",
+    umrah_a1:"Über den Bereich Umra-Reisen auf der Startseite gelangen Sie zu den passenden Paketen und zur Reservierungsseite.",
+    umrah_q2:"Wann beginnt die Umra-Reise?",
+    umrah_a2:"Die Reisedaten hängen vom gewählten Programm ab. Für aktuelle Termine und Verfügbarkeiten können Sie Hisar Europe kontaktieren.",    hajj_section_title:"Häufig gestellte Fragen zum Hadsch",
+    hajj_q1:"Wer kann zum Hadsch gehen?",
+    hajj_a1:"Jeder Muslim, der die Versorgung seiner unterhaltsberechtigten Angehörigen während seiner Abwesenheit sicherstellen kann, volljährig und zurechnungsfähig ist, körperlich und geistig in der Lage ist und finanziell die Möglichkeit hat, ist zur Erfüllung der Hadsch-Pflicht verpflichtet.",
+    hajj_q2:"Gibt es eine Altersgrenze für den Hadsch?",
+    hajj_a2:"Grundsätzlich gibt es keine allgemeine Altersgrenze für den Hadsch. Die saudischen Behörden können jedoch für bestimmte Altersgruppen Einschränkungen festlegen. In vergangenen Jahren gab es Einschränkungen für Personen über 65 Jahre; im Jahr 2025 waren Personen unter 12 Jahren eingeschränkt.",
+    hajj_q3:"Wie oft kann man zum Hadsch gehen?",
+    hajj_a3:"Für die verpflichtende Hadsch-Pflicht genügt es, einmal im Leben zum Hadsch zu gehen. Danach ist ein weiterer Hadsch freiwillig möglich.",
+    hajj_q4:"Wann wird der Hadsch durchgeführt?",
+    hajj_a4:"Der Hadsch wird nach dem islamischen Kalender an den Tagen 8, 9 und 10 des Monats Dhul-Hiddscha durchgeführt. Diese Tage sind die Haupttage der Hadsch-Pflicht.",
+    hajj_q5:"Wie erhält man ein Hadsch-Visum?",
+    hajj_a5:"Für den Hadsch aus Europa erfolgt der Prozess über die von Saudi-Arabien autorisierte Nusuk-Plattform. Man bewirbt sich individuell und wählt eines der Hadsch-Pakete von Hisar Europe aus. Hisar Europe unterstützt Sie während dieses gesamten Prozesses.",
+    hajj_q6:"Wann und wie trägt man den Ihram während des Hadsch?",
+    hajj_a6:"Für den Hadsch tritt man an bestimmten Punkten, den sogenannten Miqat-Orten, in den Ihram ein. Diese Orte liegen vor dem Erreichen von Mekke-i Mükerreme. Männer tragen zwei ungenähte weiße Tücher (Izar und Rida). Frauen können mit normaler, angemessener Kleidung in den Ihram eintreten; das Gesicht muss jedoch frei bleiben.",
+    hajj_q7:"Wie lange dauert der Hadsch?",
+    hajj_a7:"Die Dauer des Hadsch hängt von Unterkunft und Programm ab. Mindestens dauert sie etwa 7 Tage; je nach Programm können es auch 10, 15, 20 oder mehr Tage sein.",
+    hajj_q8:"Was ist der Unterschied zwischen Hadsch und Umra?",
+    hajj_a8:"Der Hadsch ist eine verpflichtende, umfassendere Pilgerfahrt, die zu einer bestimmten Zeit im Monat Dhul-Hiddscha durchgeführt wird. Die Umra ist eine freiwillige Pilgerfahrt, die das ganze Jahr über möglich ist.",
+    hajj_q9:"Welche grundlegenden Handlungen gehören zum Hadsch?",
+    hajj_a9_1:"In den Ihram eintreten",
+    hajj_a9_2:"Tawaf durchführen",
+    hajj_a9_3:"Sa’y durchführen",
+    hajj_a9_4:"Aufenthalt in Arafat",
+    hajj_a9_5:"Aufenthalt in Muzdalifa",
+    hajj_a9_6:"Steinigung der Dschamarat",
+    hajj_a9_7:"Opfer darbringen",
+    hajj_a9_8:"Haare kürzen oder rasieren",
+    hajj_q10:"Muss man an einer Hadsch-Auslosung teilnehmen?",
+    hajj_a10:"In Ländern mit großer muslimischer Bevölkerung und staatlicher Organisation, wie der Türkei, wird der Hadsch häufig per Losverfahren geregelt. In europäischen Ländern erfolgt die Registrierung über die autorisierte Nusuk-Plattform im Rahmen der jeweiligen Länderkontingente.",
+    hajj_q11:"Was ist Nusuk Hajj?",
+    hajj_a11:"Nusuk ist eine offizielle Plattform des saudischen Ministeriums für Hadsch und Umra. Sie erleichtert Pilgern den Zugang zu den gesegneten Stätten und Dienstleistungen, bietet länderspezifische Hadsch-Pakete an und ermöglicht die Abwicklung des gesamten Prozesses über ein System.",
+    contact_title:"Zurück zur Startseite",
+    contact_text:"Für Registrierung, Zahlung, Social Media und Kontakt können Sie zur Startseite zurückkehren.",
+    back_button:"Zur Startseite"
+  },
+  fr:{
+    page_title:"Questions Fréquemment Posées",
+    page_intro:"Vous trouverez ici les principales questions et réponses concernant la Omra et le Hajj.",
+    umrah_section_title:"Questions fréquentes sur la Omra",
+    umrah_q1:"Comment s’inscrire à la Omra ?",
+    umrah_a1:"Depuis la section Voyages Omra sur la page d’accueil, vous pouvez accéder aux forfaits et à la page de réservation.",
+    umrah_q2:"Quand commence le voyage de Omra ?",
+    umrah_a2:"Les dates dépendent du programme choisi. Pour les dates actuelles et les disponibilités, vous pouvez contacter Hisar Europe.",    hajj_section_title:"Questions fréquentes sur le Hajj",
+    hajj_q1:"Qui peut accomplir le Hajj ?",
+    hajj_a1:"Tout musulman capable d’assurer la subsistance des personnes à sa charge pendant son absence, majeur, sain d’esprit, physiquement et mentalement apte, et disposant des moyens financiers nécessaires, est concerné par l’obligation du Hajj.",
+    hajj_q2:"Y a-t-il une limite d’âge pour le Hajj ?",
+    hajj_a2:"Il n’existe pas de limite d’âge générale pour le Hajj, mais les autorités saoudiennes peuvent imposer des restrictions à certains groupes d’âge. Certaines années, des restrictions ont concerné les plus de 65 ans; en 2025, les moins de 12 ans ont été limités.",
+    hajj_q3:"Combien de fois peut-on accomplir le Hajj ?",
+    hajj_a3:"Pour l’obligation religieuse, accomplir le Hajj une fois dans sa vie suffit. Il est toutefois possible de l’accomplir de nouveau de manière surérogatoire.",
+    hajj_q4:"Quand le Hajj est-il accompli ?",
+    hajj_a4:"Le Hajj est accompli selon le calendrier hégirien les 8, 9 et 10 du mois de Dhul-Hijja. Ces jours sont les jours essentiels du Hajj.",
+    hajj_q5:"Comment obtenir le visa Hajj ?",
+    hajj_a5:"Pour partir au Hajj depuis l’Europe, le visa s’obtient via la plateforme Nusuk, autorisée par l’Arabie saoudite. Le candidat effectue une demande individuelle et choisit l’un des forfaits Hajj de Hisar Europe. Hisar Europe accompagne les pèlerins tout au long de ce processus.",
+    hajj_q6:"Quand et comment porter l’ihram pendant le Hajj ?",
+    hajj_a6:"Pour le Hajj, l’entrée en état d’ihram se fait à des points précis appelés Miqat, avant l’arrivée à Mekke-i Mükerreme. Pour les hommes, l’ihram se compose de deux pièces de tissu blanc non cousues (izar et rida). Les femmes peuvent entrer en ihram avec des vêtements ordinaires et appropriés, en gardant le visage découvert.",
+    hajj_q7:"Combien de temps dure le Hajj ?",
+    hajj_a7:"La durée du Hajj varie selon l’hébergement et le programme choisis. Elle dure au minimum environ 7 jours, mais peut aussi durer 10, 15, 20 jours ou plus.",
+    hajj_q8:"Quelle est la différence entre le Hajj et la Omra ?",
+    hajj_a8:"Le Hajj est une obligation religieuse plus complète, accomplie à une période précise du mois de Dhul-Hijja. La Omra est un acte de dévotion surérogatoire qui peut être accompli toute l’année.",
+    hajj_q9:"Quels sont les principaux rites du Hajj ?",
+    hajj_a9_1:"Entrer en état d’ihram",
+    hajj_a9_2:"Effectuer le tawaf",
+    hajj_a9_3:"Effectuer le sa’y",
+    hajj_a9_4:"Stationner à Arafat",
+    hajj_a9_5:"Stationner à Muzdalifa",
+    hajj_a9_6:"Lapider les stèles",
+    hajj_a9_7:"Offrir le sacrifice",
+    hajj_a9_8:"Se raser ou se couper les cheveux",
+    hajj_q10:"Faut-il participer à un tirage au sort pour le Hajj ?",
+    hajj_a10:"Dans les pays à forte population musulmane et disposant d’une organisation officielle, comme la Turquie, le Hajj peut être organisé par tirage au sort. En Europe, l’inscription se fait via la plateforme Nusuk dans la limite des quotas attribués aux pays.",
+    hajj_q11:"Qu’est-ce que Nusuk Hajj ?",
+    hajj_a11:"Nusuk est une plateforme officielle développée par le ministère saoudien du Hajj et de la Omra. Elle facilite l’accès aux lieux bénis et aux services, propose des forfaits Hajj selon les pays et permet de gérer l’ensemble du processus via un seul système.",
+    contact_title:"Retour à la page d’accueil",
+    contact_text:"Pour l’inscription, le paiement, les réseaux sociaux et le contact, vous pouvez retourner à la page d’accueil.",
+    back_button:"Retour à l’accueil"
+  },
+  nl:{
+    page_title:"Veelgestelde Vragen",
+    page_intro:"Hier vindt u belangrijke vragen en antwoorden over Umrah en Hadj.",
+    umrah_section_title:"Veelgestelde vragen over Umrah",
+    umrah_q1:"Hoe kan ik mij aanmelden voor Umrah?",
+    umrah_a1:"Via de sectie Umrah Reizen op de startpagina kunt u de beschikbare pakketten en de reserveringspagina openen.",
+    umrah_q2:"Wanneer begint de Umrah-reis?",
+    umrah_a2:"De reisdata verschillen per gekozen programma. Voor actuele data en beschikbaarheid kunt u contact opnemen met Hisar Europe.",    hajj_section_title:"Veelgestelde vragen over Hadj",
+    hajj_q1:"Wie kan naar Hadj gaan?",
+    hajj_a1:"Elke moslim die de personen voor wie hij verantwoordelijk is tijdens zijn afwezigheid kan onderhouden, volwassen en toerekeningsvatbaar is, lichamelijk en geestelijk in staat is en financieel de mogelijkheid heeft, is verplicht de Hadj te verrichten.",
+    hajj_q2:"Is er een leeftijdsgrens voor Hadj?",
+    hajj_a2:"Er is in het algemeen geen vaste leeftijdsgrens voor de Hadj, maar de Saoedische autoriteiten kunnen beperkingen opleggen aan bepaalde leeftijdsgroepen. In sommige jaren golden beperkingen voor personen boven 65 jaar; in 2025 werden personen onder 12 jaar beperkt.",
+    hajj_q3:"Hoe vaak kan men naar Hadj gaan?",
+    hajj_a3:"Voor de verplichte Hadj is één keer in het leven voldoende. Daarna is het mogelijk om vrijwillig opnieuw de Hadj te verrichten.",
+    hajj_q4:"Wanneer wordt de Hadj verricht?",
+    hajj_a4:"De Hadj wordt volgens de islamitische kalender verricht op de 8e, 9e en 10e dag van de maand Dhul-Hijjah. Dit zijn de belangrijkste dagen van de Hadj.",
+    hajj_q5:"Hoe krijgt men een Hadj-visum?",
+    hajj_a5:"Voor Hadj vanuit Europa verloopt het proces via het door Saoedi-Arabië goedgekeurde Nusuk-platform. Men doet individueel een aanvraag en kiest een van de Hadj-pakketten van Hisar Europe. Hisar Europe ondersteunt u gedurende dit hele proces.",
+    hajj_q6:"Wanneer en hoe wordt de ihram gedragen tijdens Hadj?",
+    hajj_a6:"Voor Hadj treedt men op bepaalde punten, Miqat genoemd, in de staat van ihram. Deze punten liggen vóór aankomst in Mekke-i Mükerreme. Mannen dragen twee ongestikte witte doeken (izar en rida). Vrouwen kunnen met normale, gepaste kleding in ihram treden, maar het gezicht moet onbedekt blijven.",
+    hajj_q7:"Hoe lang duurt de Hadj?",
+    hajj_a7:"De duur van de Hadj hangt af van accommodatie en programma. Minimaal duurt het ongeveer 7 dagen; afhankelijk van het programma kan dit 10, 15, 20 dagen of langer zijn.",
+    hajj_q8:"Wat is het verschil tussen Hadj en Umrah?",
+    hajj_a8:"Hadj is een verplichte en uitgebreidere bedevaart die op een specifieke tijd in de maand Dhul-Hijjah wordt verricht. Umrah is een vrijwillige bedevaart die het hele jaar door kan worden verricht.",
+    hajj_q9:"Wat zijn de belangrijkste rituelen tijdens Hadj?",
+    hajj_a9_1:"In de staat van ihram treden",
+    hajj_a9_2:"Tawaf verrichten",
+    hajj_a9_3:"Sa’y verrichten",
+    hajj_a9_4:"In Arafat verblijven",
+    hajj_a9_5:"In Muzdalifah verblijven",
+    hajj_a9_6:"De pilaren stenigen",
+    hajj_a9_7:"Offer brengen",
+    hajj_a9_8:"Haar knippen of scheren",
+    hajj_q10:"Is deelname aan een Hadj-loting verplicht?",
+    hajj_a10:"In landen met een grote moslimbevolking en officiële organisatie, zoals Turkije, worden Hadj-procedures vaak via loting bepaald. In Europese landen verloopt registratie via het bevoegde Nusuk-platform binnen de toegewezen quota.",
+    hajj_q11:"Wat is Nusuk Hajj?",
+    hajj_a11:"Nusuk is een officieel platform van het Saoedische ministerie van Hadj en Umrah. Het vergemakkelijkt de toegang tot de gezegende plaatsen en diensten, biedt landgebonden Hadj-pakketten aan en maakt het mogelijk het hele proces via één systeem te beheren.",
+    contact_title:"Terug naar de startpagina",
+    contact_text:"Voor registratie, betaling, sociale media en contact kunt u terugkeren naar de startpagina.",
+    back_button:"Terug naar startpagina"
+  },
+  en:{
+    page_title:"Frequently Asked Questions",
+    page_intro:"Here you can find key questions and answers about Umrah and Hajj.",
+    umrah_section_title:"Frequently Asked Questions About Umrah",
+    umrah_q1:"How can I register for Umrah?",
+    umrah_a1:"You can access the relevant packages and reservation page through the Umrah Tours section on the homepage.",
+    umrah_q2:"When does the Umrah trip start?",
+    umrah_a2:"Travel dates vary depending on the selected program. For current dates and availability, please contact Hisar Europe.",    hajj_section_title:"Frequently Asked Questions About Hajj",
+    hajj_q1:"Who can go to Hajj?",
+    hajj_a1:"Every Muslim who can provide for the people they are responsible for until returning from Hajj, is mature and of sound mind, physically and mentally capable, and financially able to go to Hajj, is obligated to perform Hajj.",
+    hajj_q2:"Is there an age limit for Hajj?",
+    hajj_a2:"There is generally no fixed age limit for Hajj, but the Saudi authorities may impose restrictions on certain age groups. In previous years, restrictions applied to people over 65, and in 2025 participation for those under 12 was restricted.",
+    hajj_q3:"How many times can Hajj be performed?",
+    hajj_a3:"For the obligatory Hajj, performing it once in a lifetime is sufficient. It is also possible to perform Hajj again voluntarily afterwards.",
+    hajj_q4:"When is Hajj performed?",
+    hajj_a4:"Hajj is performed according to the Hijri calendar on the 8th, 9th and 10th days of Dhul-Hijjah. These are the main obligatory days of Hajj.",
+    hajj_q5:"How is the Hajj visa obtained?",
+    hajj_a5:"For Hajj from Europe, the visa process is handled through the Nusuk platform, the authorized system by Saudi Arabia. Applicants apply individually and choose one of Hisar Europe’s Hajj packages. Hisar Europe supports pilgrims throughout this process.",
+    hajj_q6:"When and how is Ihram worn during Hajj?",
+    hajj_a6:"For Hajj, Ihram is entered at specific points called Miqat before reaching Mekke-i Mükerreme. Men wear two unstitched white cloths (izar and rida). Women may enter Ihram in normal, appropriate clothing, but their faces must remain uncovered.",
+    hajj_q7:"How long does Hajj last?",
+    hajj_a7:"The duration of Hajj varies depending on accommodation and program preferences. It lasts at least about 7 days, but can also be 10, 15, 20 or more days depending on the program.",
+    hajj_q8:"What is the difference between Hajj and Umrah?",
+    hajj_a8:"Hajj is an obligatory and more comprehensive pilgrimage performed at a specific time in the month of Dhul-Hijjah. Umrah is a voluntary pilgrimage that can be performed throughout the year.",
+    hajj_q9:"What are the main rituals during Hajj?",
+    hajj_a9_1:"Entering Ihram",
+    hajj_a9_2:"Performing Tawaf",
+    hajj_a9_3:"Performing Sa’y",
+    hajj_a9_4:"Standing at Arafat",
+    hajj_a9_5:"Staying at Muzdalifah",
+    hajj_a9_6:"Stoning the pillars",
+    hajj_a9_7:"Offering the sacrifice",
+    hajj_a9_8:"Cutting or shaving the hair",
+    hajj_q10:"Is it required to join a Hajj lottery?",
+    hajj_a10:"In countries with large Muslim populations and official religious authorities, such as Turkey, Hajj procedures are often determined by lottery. In European countries, registration is handled through the authorized Nusuk platform within the country quotas.",
+    hajj_q11:"What is Nusuk Hajj?",
+    hajj_a11:"Nusuk is an official platform developed by the Saudi Ministry of Hajj and Umrah. It helps pilgrims access the blessed sites and services, offers country-specific Hajj packages and allows the entire process to be managed through one system.",
+    contact_title:"Back to Homepage",
+    contact_text:"For registration, payment, social media and contact links, you can return to the homepage.",
+    back_button:"Back to Homepage"
+  }
+};
+
+let currentLang = localStorage.getItem("selectedLang") || "tr";
+
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem("selectedLang", lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.dataset.i18n;
+    if(translations[lang] && translations[lang][key]){
+      el.innerText = translations[lang][key];
+    }
+  });
+  const select = document.querySelector(".language-switcher select");
+  if(select) select.value = lang;
 }
 
-/* TRANSLATIONS */
-const translations={/* unverändert aus Original */};
-function setLanguage(lang){
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-el.innerText=translations[lang][el.dataset.i18n];
-});
+function toggleFaq(el){
+  el.classList.toggle("open");
 }
-setLanguage("de");
+
+setLanguage(currentLang);
 </script>
 
 </body>
