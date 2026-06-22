@@ -199,10 +199,11 @@ a.button:hover{
   <div class="header-right">
     <div class="language-switcher">
       <select onchange="setLanguage(this.value)">
-        <option value="de">🇩🇪 DE</option>
         <option value="tr">🇹🇷 TR</option>
-        <option value="en">🇬🇧 EN</option>
+        <option value="de">🇩🇪 DE</option>
         <option value="fr">🇫🇷 FR</option>
+        <option value="nl">🇳🇱 NL</option>
+        <option value="en">🇬🇧 EN</option>
       </select>
     </div>
   </div>
@@ -273,7 +274,7 @@ a.button:hover{
 <div class="card card-social" style="background:#f9f9f9;">
 <p style="margin-bottom:16px;" data-i18n="social_prompt"></p>
 <div class="socials">
-  <a class="social-icon" href="https://www.instagram.com/hisar_europe/" target="_blank">
+  <a id="instagramLink" class="social-icon" href="https://www.instagram.com/hisar_europe/" target="_blank">
     <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig)"><defs>
     <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#f58529"/>
@@ -284,19 +285,19 @@ a.button:hover{
     <circle cx="12" cy="12" r="4"/>
     </svg>
   </a>
-  <a class="social-icon" href="https://www.facebook.com/hisareuropetravelgmbh?locale=tr_TR" target="_blank">
+  <a id="facebookLink" class="social-icon" href="https://www.facebook.com/hisareuropetravelgmbh?locale=tr_TR" target="_blank">
     <svg viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10" fill="#1877F2"/>
       <path fill="#FFFFFF" d="M13.4 20v-7h2.3l.4-2.7h-2.7V8.6c0-.8.2-1.3 1.3-1.3h1.5V4.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.7v1.8H7.9V13h2.4v7h3.1z"/>
     </svg>
   </a>
-  <a class="social-icon" href="https://www.youtube.com/@HisarEurope" target="_blank">
+  <a id="youtubeLink" class="social-icon" href="https://www.youtube.com/@HisarEurope" target="_blank">
     <svg viewBox="0 0 24 24">
       <rect x="2" y="4" width="20" height="16" rx="4" fill="#FF0000"/>
       <polygon points="10,8 16,12 10,16" fill="#FFFFFF"/>
     </svg>
   </a>
-  <a class="social-icon" href="https://whatsapp.com/channel/0029VaSzmboJpe8jgaPg622N" target="_blank">
+  <a id="whatsappLink" class="social-icon" href="https://whatsapp.com/channel/0029VaSzmboJpe8jgaPg622N" target="_blank">
     <svg viewBox="0 0 32 32">
       <path fill="#25D366" d="M16 3C9.4 3 4 8.1 4 14.5c0 2.3.7 4.6 2 6.5L4 29l8.3-2.2c1.1.3 2.3.5 3.7.5 6.6 0 12-5.1 12-11.5S22.6 3 16 3z"/>
       <path fill="#fff" d="M21.4 18.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.6-.2-.9.2-.3.4-1 1-1.2 1.2-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 4 1.6 4.3c.2.3 2.8 4.3 6.8 6 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.6-.5z"/>
@@ -376,19 +377,56 @@ function openGoogleMaps(e){
 
 /* TRANSLATIONS */
 const translations={
-  de:{review_title:"Jetzt bewerten",review_text:"Teilen Sie Ihre Erfahrung mit Hisar Europe und helfen Sie neuen Gästen bei ihrer Entscheidung",review_button:"Google-Bewertung abgeben",umrah_title:"Umra-Tour reservieren",umrah_text:"Jetzt online buchen",umrah_button:"Jetzt reservieren",hajj_title:"Hadsch 2027",hajj_text:"Jetzt vormerken",hajj_button:"Jetzt anmelden",bank_title:"Bankverbindung",bank_button:"Bankverbindung anzeigen",video_title:"Reisepass scannen",video_text:"Kurze Videoanleitung",video_button:"Tutorial ansehen",faq_title:"FAQ",faq_text:"Häufig gestellte Fragen",faq_button:"Zum FAQ",faq_q1:"Wie melde ich mich an?",faq_a1:"Über die Anmeldeformulare auf der Startseite.",faq_q2:"Wann beginnt die Reise?",faq_a2:"Die Termine werden nach Anmeldung bekanntgegeben.",website_title:"Hisar Europe Website",website_text:"Besuchen Sie unsere offizielle Website",website_button:"Website öffnen",copy_success:"✓ kopiert",copy_iban:"IBAN kopieren",social_prompt:"Besuchen Sie uns auch auf unseren Kanälen"},
-  tr:{review_title:"Bizi Değerlendirin",review_text:"Hisar Europe ile yaşadığınız deneyimi bizimle paylaşarak yeni misafirlerimize yardımcı olabilirsiniz",review_button:"Google Yorumu Bırak",umrah_title:"Umre Turları",umrah_text:"Online Rezervasyon",umrah_button:"Rezervasyon Yap",hajj_title:"Hac 2027",hajj_text:"Ön Kayıt",hajj_button:"Kayıt Ol",bank_title:"Banka Bilgileri",bank_button:"Banka Bilgilerini Göster",video_title:"Pasaport Nasıl Okutulur",video_text:"Kısa Video Anlatım",video_button:"Videoyu İzle",faq_title:"SSS",faq_text:"Sıkça Sorulan Sorular",faq_button:"SSS'ye Git",faq_q1:"Nasıl kayıt olabilirim?",faq_a1:"Ana sayfadaki kayıt formlarını kullanarak.",faq_q2:"Seyahat ne zaman başlıyor?",faq_a2:"Tarihleri kayıt sonrası öğrenebilirsiniz.",website_title:"Hisar Europe Web Sitesi",website_text:"Resmî web sitemizi ziyaret edin",website_button:"Web Sitesini Aç",copy_success:"✓ Kopyalandı",copy_iban:"IBAN’ı Kopyala",social_prompt:"Kanallarımızda da bizi ziyaret edin"},
-  en:{review_title:"Leave a review",review_text:"Share your experience with Hisar Europe and help our future guests",review_button:"Leave Google review",umrah_title:"Book Umrah Tour",umrah_text:"Online Booking",umrah_button:"Book Now",hajj_title:"Hajj 2027",hajj_text:"Pre-registration",hajj_button:"Register Now",bank_title:"Bank Details",bank_button:"Show Bank Details",video_title:"How to Scan Your Passport",video_text:"Short Video Guide",video_button:"Watch Tutorial",faq_title:"FAQ",faq_text:"Frequently Asked Questions",faq_button:"Go to FAQ",faq_q1:"How do I register?",faq_a1:"Via the registration forms on the homepage.",faq_q2:"When does the trip start?",faq_a2:"Dates are announced after registration.",website_title:"Hisar Europe Website",website_text:"Visit our official website",website_button:"Open Website",copy_success:"✓ Copied",copy_iban:"Copy IBAN",social_prompt:"Visit us also on our channels"},
-  fr:{review_title:"Votre Avis Nous Intéresse",review_text:"Partagez votre expérience avec Hisar Europe et aidez nos futurs voyageurs",review_button:"Laisser un Avis Google",umrah_title:"Voyages Omra",umrah_text:"Réservation en ligne",umrah_button:"Réserver Maintenant",hajj_title:"Hajj 2027",hajj_text:"Préinscription",hajj_button:"S'inscrire",bank_title:"Coordonnées Bancaires",bank_button:"Afficher les Coordonnées",video_title:"Comment Scanner Le Passeport",video_text:"Courte vidéo explicative",video_button:"Voir la Vidéo",faq_title:"FAQ",faq_text:"Questions Fréquemment Posées",faq_button:"Aller à la FAQ",faq_q1:"Comment puis-je m’inscrire ?",faq_a1:"Via les formulaires d’inscription sur la page d’accueil.",faq_q2:"Quand commence le voyage ?",faq_a2:"Les dates sont communiquées après l’inscription.",website_title:"Site Web Hisar Europe",website_text:"Visitez notre site officiel",website_button:"Ouvrir le Site Web",copy_success:"✓ Copié",copy_iban:"Copier l’IBAN",social_prompt:"Visitez également nos réseaux sociaux"}
+  de:{review_title:"Jetzt bewerten",review_text:"Teilen Sie Ihre Erfahrung mit Hisar Europe und helfen Sie neuen Gästen bei ihrer Entscheidung",review_button:"Google-Bewertung abgeben",umrah_title:"Umra-Tour reservieren",umrah_text:"Jetzt online buchen",umrah_button:"Jetzt reservieren",hajj_title:"Hadsch 2027 Voranmeldeformular",hajj_text:"Erstellen Sie eine Voranmeldung für Kontingente und detaillierte Informationen",hajj_button:"Jetzt anmelden",bank_title:"Bankverbindung",bank_button:"Bankverbindung anzeigen",video_title:"Reisepass scannen",video_text:"Kurze Videoanleitung",video_button:"Tutorial ansehen",faq_title:"FAQ",faq_text:"Häufig gestellte Fragen",faq_button:"Zum FAQ",faq_q1:"Wie melde ich mich an?",faq_a1:"Über die Anmeldeformulare auf der Startseite.",faq_q2:"Wann beginnt die Reise?",faq_a2:"Die Termine werden nach Anmeldung bekanntgegeben.",website_title:"Unsere offizielle Website",website_text:"Entdecken Sie alle unsere Umra-, Hadsch- und Kulturreisen.",website_button:"Website öffnen",copy_success:"✓ kopiert",copy_iban:"IBAN kopieren",social_prompt:"Besuchen Sie uns auch auf unseren Kanälen"},
+  tr:{review_title:"Bizi Değerlendirin",review_text:"Hisar Europe ile yaşadığınız deneyimi bizimle paylaşarak yeni misafirlerimize yardımcı olabilirsiniz",review_button:"Google Yorumu Bırak",umrah_title:"Umre Turları",umrah_text:"Online Rezervasyon",umrah_button:"Rezervasyon Yap",hajj_title:"Hac 2027 Ön Kayıt Formu",hajj_text:"Kontenjan ve detaylı bilgi için ön kayıt oluşturun",hajj_button:"Kayıt Ol",bank_title:"Banka Bilgileri",bank_button:"Banka Bilgilerini Göster",video_title:"Pasaport Nasıl Okutulur",video_text:"Kısa Video Anlatım",video_button:"Videoyu İzle",faq_title:"SSS",faq_text:"Sıkça Sorulan Sorular",faq_button:"SSS'ye Git",faq_q1:"Nasıl kayıt olabilirim?",faq_a1:"Ana sayfadaki kayıt formlarını kullanarak.",faq_q2:"Seyahat ne zaman başlıyor?",faq_a2:"Tarihleri kayıt sonrası öğrenebilirsiniz.",website_title:"Resmî Web Sitemiz",website_text:"Umre, Hac ve kültür turlarımızı inceleyebilirsiniz.",website_button:"Web Sitesini Aç",copy_success:"✓ Kopyalandı",copy_iban:"IBAN’ı Kopyala",social_prompt:"Kanallarımızda da bizi ziyaret edin"},
+  en:{review_title:"Leave a review",review_text:"Share your experience with Hisar Europe and help our future guests",review_button:"Leave Google review",umrah_title:"Book Umrah Tour",umrah_text:"Online Booking",umrah_button:"Book Now",hajj_title:"Hajj 2027 Pre-Registration Form",hajj_text:"Create a pre-registration for availability and detailed information",hajj_button:"Register Now",bank_title:"Bank Details",bank_button:"Show Bank Details",video_title:"How to Scan Your Passport",video_text:"Short Video Guide",video_button:"Watch Tutorial",faq_title:"FAQ",faq_text:"Frequently Asked Questions",faq_button:"Go to FAQ",faq_q1:"How do I register?",faq_a1:"Via the registration forms on the homepage.",faq_q2:"When does the trip start?",faq_a2:"Dates are announced after registration.",website_title:"Our Official Website",website_text:"Explore all our Umrah, Hajj and cultural tours.",website_button:"Open Website",copy_success:"✓ Copied",copy_iban:"Copy IBAN",social_prompt:"Visit us also on our channels"},
+  fr:{review_title:"Votre Avis Nous Intéresse",review_text:"Partagez votre expérience avec Hisar Europe et aidez nos futurs voyageurs",review_button:"Laisser un Avis Google",umrah_title:"Voyages Omra",umrah_text:"Réservation en ligne",umrah_button:"Réserver Maintenant",hajj_title:"Formulaire de Préinscription Hajj 2027",hajj_text:"Créez une préinscription pour les disponibilités et les informations détaillées",hajj_button:"S'inscrire",bank_title:"Coordonnées Bancaires",bank_button:"Afficher les Coordonnées",video_title:"Comment Scanner Le Passeport",video_text:"Courte vidéo explicative",video_button:"Voir la Vidéo",faq_title:"FAQ",faq_text:"Questions Fréquemment Posées",faq_button:"Aller à la FAQ",faq_q1:"Comment puis-je m’inscrire ?",faq_a1:"Via les formulaires d’inscription sur la page d’accueil.",faq_q2:"Quand commence le voyage ?",faq_a2:"Les dates sont communiquées après l’inscription.",website_title:"Notre Site Web Officiel",website_text:"Découvrez tous nos voyages Omra, Hajj et culturels.",website_button:"Ouvrir le Site Web",copy_success:"✓ Copié",copy_iban:"Copier l’IBAN",social_prompt:"Visitez également nos réseaux sociaux"},
+  nl:{review_title:"Beoordeel Ons",review_text:"Deel uw ervaring met Hisar Europe en help onze toekomstige gasten",review_button:"Google Review Achterlaten",umrah_title:"Umrah Reizen",umrah_text:"Online Reservering",umrah_button:"Nu Reserveren",hajj_title:"Hadj 2027 Voorinschrijfformulier",hajj_text:"Maak een voorinschrijving aan voor beschikbaarheid en gedetailleerde informatie",hajj_button:"Inschrijven",bank_title:"Bankgegevens",bank_button:"Bankgegevens Tonen",video_title:"Paspoort Scannen",video_text:"Korte Video-uitleg",video_button:"Video Bekijken",faq_title:"FAQ",faq_text:"Veelgestelde Vragen",faq_button:"Naar FAQ",faq_q1:"Hoe kan ik mij inschrijven?",faq_a1:"Via de aanmeldformulieren op de startpagina.",faq_q2:"Wanneer begint de reis?",faq_a2:"De data worden na inschrijving bekendgemaakt.",website_title:"Onze Officiële Website",website_text:"Bekijk al onze Umrah-, Hadj- en cultuurreizen.",website_button:"Website Openen",copy_success:"✓ Gekopieerd",copy_iban:"IBAN Kopiëren",social_prompt:"Bezoek ons ook op onze kanalen"}
+};
+
+const socialLinks={
+  default:{
+    instagram:"https://www.instagram.com/hisar_europe/",
+    facebook:"https://www.facebook.com/hisareuropetravelgmbh?locale=tr_TR",
+    youtube:"https://www.youtube.com/@HisarEurope",
+    whatsapp:"https://whatsapp.com/channel/0029VaSzmboJpe8jgaPg622N"
+  },
+  fr:{
+    instagram:"https://www.instagram.com/hisareurope_fr/",
+    facebook:"https://www.facebook.com/hisareuropefr",
+    youtube:"https://www.youtube.com/@HisarEurope",
+    whatsapp:"https://whatsapp.com/channel/0029VaycjtGCcW4zT8KPKv1c"
+  },
+  nl:{
+    instagram:"https://www.instagram.com/hisareurope_nl/",
+    facebook:"https://www.facebook.com/hisareuropenl/",
+    youtube:"https://www.youtube.com/@HisarEurope",
+    whatsapp:"https://whatsapp.com/channel/0029VbC4ZKg1nozA13vB8Y3c"
+  },
+  en:{
+    instagram:"https://www.instagram.com/hisartour.uk/",
+    facebook:"https://www.facebook.com/Hisartours/",
+    youtube:"https://www.youtube.com/@HisarEurope",
+    whatsapp:"https://whatsapp.com/channel/0029VbC4ZKg1nozA13vB8Y3c"
+  }
 };
 
 let currentLang = localStorage.getItem("selectedLang") || "de";
+function updateSocialLinks(lang){
+  const links = socialLinks[lang] || socialLinks.default;
+  document.getElementById("instagramLink").href = links.instagram;
+  document.getElementById("facebookLink").href = links.facebook;
+  document.getElementById("youtubeLink").href = links.youtube;
+  document.getElementById("whatsappLink").href = links.whatsapp;
+}
+
 function setLanguage(lang){
   currentLang = lang;
   localStorage.setItem("selectedLang", lang);
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     el.innerText=translations[lang][el.dataset.i18n];
   });
+  updateSocialLinks(lang);
   const select = document.querySelector(".language-switcher select");
   if (select) select.value = lang;
 }
