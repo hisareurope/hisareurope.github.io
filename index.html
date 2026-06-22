@@ -267,7 +267,7 @@ a.button:hover{
 <div class="card card-faq">
 <h2 data-i18n="faq_title"></h2>
 <p data-i18n="faq_text"></p>
-<a class="button" href="#" onclick="showFAQ();return false;" data-i18n="faq_button"></a>
+<a class="button" href="faq.html" data-i18n="faq_button"></a>
 </div>
 
 
@@ -308,21 +308,6 @@ a.button:hover{
 
 </div> <!-- END homeView -->
 
-<!-- FAQ-Seite -->
-<div class="container faq" id="faqView" style="display:none;background:linear-gradient(to bottom,#e6edf7 0%,#f4f7fb 100%)">
-<div class="card">
-<h2 data-i18n="faq_title"></h2>
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong data-i18n="faq_q1"></strong>
-<p data-i18n="faq_a1"></p>
-</div>
-<div class="faq-item" onclick="toggleFaq(this)">
-<strong data-i18n="faq_q2"></strong>
-<p data-i18n="faq_a2"></p>
-</div>
-</div>
-</div>
-
 <!-- VIDEO MODAL -->
 <div id="videoModal">
 <div class="box">
@@ -332,18 +317,6 @@ a.button:hover{
 </div>
 
 <script>
-function showFAQ(){
-  document.getElementById("homeView").style.display="none";
-  document.getElementById("faqView").style.display="flex";
-  document.getElementById("headerLeft").style.visibility="visible";
-  document.getElementById("headerCenter").style.justifyContent="center";
-}
-function backToHome(){
-  document.getElementById("faqView").style.display="none";
-  document.getElementById("homeView").style.display="flex";
-  document.getElementById("headerLeft").style.visibility="hidden";
-  document.getElementById("headerCenter").style.justifyContent="center";
-}
 function toggleFaq(el){
   const p=el.querySelector("p");
   p.style.display=p.style.display==="block"?"none":"block";
@@ -361,7 +334,13 @@ function copyIBAN(){
 function openVideo() {
   const modal = document.getElementById("videoModal");
   const frame = document.getElementById("videoFrame");
-  frame.src = "https://www.youtube.com/embed/TNSjLdjA9Nc";
+
+  const videoLinks = {
+    de: "https://www.youtube.com/embed/Omoy533_D4E",
+    default: "https://www.youtube.com/embed/TNSjLdjA9Nc"
+  };
+
+  frame.src = videoLinks[currentLang] || videoLinks.default;
   modal.classList.add("active");
 }
 function closeVideo() {
